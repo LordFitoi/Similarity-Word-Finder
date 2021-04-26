@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  padding: 0 5%;
+  margin: 0;
+}
+.app__title {
+  text-transform: capitalize;
+  text-align: center;
+  margin: 1rem 0 1rem 0;
+}
+.app__description {
+  padding: 1rem 2rem;
+  text-align: justify;
+  font-style: italic;
+}
+
+.input__container {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: #f0d58c;
+}
+.input__container--container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.input__container--container label {
+  margin: 8px 0;
+}
+.range__container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 14rem;
+  background-color: #cca976b7;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.input {
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  width: 300px;
+}
+.input__range {
+  margin: 8px 1rem 0 0;
+  width: 10rem;
+}
+label {
+  font-weight: bolder;
+}
+span {
+  color: #9c2102;
+  font-weight: bold;
+}
+
+.textarea__container {
+  width: 100%;
+  margin: 3rem auto 1rem auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.textarea__container label {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.textarea__main {
+  resize: none;
+  height: 15rem;
+  padding: 1rem;
+  text-align: justify;
+}
+
+.table__container {
+  display: flex;
+  justify-content: center;
+}
+label {
+  width: 100%;
+}
+table,
+th,
+td {
+  text-align: center;
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 3px;
+  width: 30rem;
+}
+th {
+  text-transform: capitalize;
+  background-color: #f0d58c;
+}
+table {
+  margin-bottom: 5rem;
+}

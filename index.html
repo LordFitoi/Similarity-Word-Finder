@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Similarity Word Finder</title>
+  </head>
+  <body>
+    <link rel="stylesheet" href="mystyle.css" />
+    <div id="app" class="app">
+      <h1 class="app__title">similarity word finder</h1>
+      <p class="app__description">{{ appDescription }}</p>
+      <div class="input__container">
+        <div class="input__container--container">
+          <label>Words to Find:</label>
+          <input
+            type="text"
+            class="input"
+            placeholder="Insert Text Here..."
+            v-model="inputWord"
+            @keyup="similarWords"
+          />
+        </div>
+        <div class="range__container">
+          <label>
+            Search Bias Level:
+            <span class=""> {{ biasDepth | fltPorcent }} </span>
+          </label>
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.1"
+            class="input__range"
+            v-model="biasDepth"
+            @change="similarWords"
+          />
+        </div>
+      </div>
+
+      <div class="textarea__container">
+        <label for="">Text to Analyze:</label>
+        <textarea
+          class="textarea__main"
+          placeholder="Insert Text Here..."
+          v-model="inputText"
+          @keyup="similarWords"
+        ></textarea>
+      </div>
+
+      <div class="table__container">
+        <table>
+          <tr>
+            <th>word</th>
+            <th>similarity</th>
+          </tr>
+          <tr v-for="item in similarList" v-bind:key="item.id">
+            <td>{{ item.name }}</td>
+            <td>{{ item.prob | fltPorcent }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
